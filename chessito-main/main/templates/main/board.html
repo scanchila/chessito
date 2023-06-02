@@ -1,0 +1,473 @@
+{% extends "main/base.html" %}
+{% block content %}
+
+
+<!DOCTYPE html>
+
+<html>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  
+	<head>
+		<meta charset="utf-8" />
+		<title>HTMLiveCode</title>
+		<style type="text/css">
+			
+		</style>
+		
+	</head>
+
+	<body>
+    
+
+
+
+    <div align="left">
+
+      <div>
+	      <table style = "text-align:center;border-spacing:0pt;font-family:'Arial Unicode MS'; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 1pt 1pt 1pt">
+  <tr>
+    <th colspan="2" style = "text-align:center;border-spacing:0pt;font-family:'Arial Unicode MS'; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 1pt 1pt 1pt">Players</th>
+  </tr>
+  <tr style = "text-align:center;border-spacing:0pt;font-family:'Arial Unicode MS'; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 1pt 1pt 1pt">
+    <td style = "text-align:center;border-spacing:0pt;font-family:'Arial Unicode MS'; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 1pt 1pt 1pt">Mordor</td>
+    <td style = "text-align:center;border-spacing:0pt;font-family:'Arial Unicode MS'; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 1pt 1pt 1pt">Gondor</td>
+  </tr>
+  <tr style = "text-align:center;border-spacing:0pt;font-family:'Arial Unicode MS'; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 1pt 1pt 1pt">
+    <td style = "text-align:center;border-spacing:0pt;font-family:'Arial Unicode MS'; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 1pt 1pt 1pt">{{game.player1}}</td>
+    <td style = "text-align:center;border-spacing:0pt;font-family:'Arial Unicode MS'; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 1pt 1pt 1pt">{{game.player2}}</td>
+  </tr>
+</table>
+      </div>
+	    </div>
+
+
+
+
+<div class="ui segment">
+  <div class="ui two column very relaxed grid">
+    <div class="column">
+    <div align = "right" >
+   <div>
+    
+      GAME ID:  <div id="gameidgetter">{{gameid}}</div>
+      </div>
+      <div id="currentplayer">
+        Player
+      </div>
+      </div>
+ 
+      <div>
+        {% if not game.player2 %}
+      
+        <div>
+        <input type="text" id = "tempsend" name="name" required
+        minlength="4" maxlength="8" size="10">
+        <button type="button" id = "buttonsend" >Invite</button>
+   
+        </div>
+    
+        {% endif %}
+      </div>
+
+
+		
+      <table style="text-align:center;border-spacing:0pt;font-family:'Arial Unicode MS'; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 0pt 0pt">
+<div align="left">
+<tbody><tr>
+<td style="width:12pt">8
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 0pt 0pt 1pt"><div onclick="cords(this)"  style="font-size:500%;" id = "00">♜</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 0pt 0pt 0pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "01">♞</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 0pt 0pt 0pt"><div onclick="cords(this)" style="font-size:500%;" id = "02">♝</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 0pt 0pt 0pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "03">♛</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 0pt 0pt 0pt"><div onclick="cords(this)" style="font-size:500%;" id = "04">♚</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 0pt 0pt 0pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "05">♝</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 0pt 0pt 0pt"><div onclick="cords(this)" style="font-size:500%;", id = "06">♞</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 1pt 1pt 0pt 0pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "07">♜</div>
+</td></tr>
+<tr>
+<td style="width:12pt">7
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 0pt 1pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "10">♟</div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;"  id = "11" onclick="javascript:">♟</div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;"id = "12">♟</div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "13">♟</div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "14">♟</div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "15">♟</div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "16">♟</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 1pt 0pt 0pt"><div onclick="cords(this)" style="font-size:500%;" id = "17">♟</div>
+</td></tr>
+<tr>
+<td style="width:12pt">6
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 0pt 1pt"><div onclick="cords(this)" style="font-size:500%;" id = "20"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "21"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "22"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "23"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;"id = "24"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "25"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "26"></div>
+</td>
+	<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 1pt 0pt 0pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "27"><br></div>
+</td></tr>
+<tr>
+<td style="width:12pt">5
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 0pt 1pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "30"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "31"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "32"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "33"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "34"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "35"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "36"></div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 1pt 0pt 0pt"><div onclick="cords(this)" style="font-size:500%;" id = "37"><br></div>
+</td></tr>
+<tr>
+<td style="width:12pt">4
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 0pt 1pt"><div onclick="cords(this)" style="font-size:500%;" id = "40"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "41"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "42"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "43"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "44"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;"id = "45"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "46"></div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 1pt 0pt 0pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "47"><br></div>
+</td></tr>
+<tr>
+<td style="width:12pt">3
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 0pt 1pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "50"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "51"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "52"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "53"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "54"></div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "55"></div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "56"></div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 1pt 0pt 0pt"><div onclick="cords(this)" style="font-size:500%;" id = "57"><br></div>
+</td></tr>
+<tr>
+<td style="width:12pt">2
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 0pt 1pt"><div onclick="cords(this)" style="font-size:500%;" id = "60">♙</div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "61">♙</div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "62">♙</div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "63">♙</div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "64">♙</div>
+</td>
+<td style="width:24pt; height:24pt;" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "65">♙</div>
+</td>
+<td style="width:24pt; height:24pt;"><div onclick="cords(this)" style="font-size:500%;" id = "66">♙</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 1pt 0pt 0pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "67">♙</div>
+</td></tr>
+<tr>
+<td style="width:12pt">1
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 1pt 1pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "70">♖</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 1pt 0pt"><div onclick="cords(this)" style="font-size:500%;" id = "71">♘</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 1pt 0pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "72">♗</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 1pt 0pt"><div onclick="cords(this)" style="font-size:500%;" id = "73">♕</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 1pt 0pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "74">♔</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 1pt 0pt"><div onclick="cords(this)" style="font-size:500%;" id = "75">♗</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 0pt 1pt 0pt" bgcolor="silver"><div onclick="cords(this)" style="font-size:500%;" id = "76">♘</div>
+</td>
+<td style="width:24pt; height:24pt; border-collapse:collapse; border-color: black; border-style: solid; border-width: 0pt 1pt 1pt 0pt"><div onclick="cords(this)" style="font-size:500%;" id = "77">♖</div>
+</td></tr>
+<tr>
+<td>
+</td>
+<td>a
+</td>
+<td>b
+</td>
+<td>c
+</td>
+<td>d
+</td>
+<td>e
+</td>
+<td>f
+</td>
+<td>g
+</td>
+<td>h
+</td></tr></tbody></table>
+</div>
+</div>
+   
+
+
+
+    <h1>Lobby Chat</h1>
+
+    <form id="form">
+        <input type="text" name="message"/>
+    </form>
+
+    <div id="messages"></div>
+
+
+
+
+  
+    
+
+
+<script   >
+  const pieceMap = new Map()
+  
+  pieceMap.set("1","♚")
+  pieceMap.set("3","♜")
+  pieceMap.set("5","♞")
+  pieceMap.set("6","♝")
+  pieceMap.set("8","♟")
+  pieceMap.set("9","♛")
+  pieceMap.set("-1","♔")
+  pieceMap.set("-3","♖")
+  pieceMap.set("-5","♘")
+  pieceMap.set("-6","♗")
+  pieceMap.set("-8","♙")
+  pieceMap.set("-9","♕")
+  pieceMap.set("0","<br>")
+  const roomName = '{{gameid}}'
+  const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/socket-server/'
+            + roomName
+            + '/'
+        );
+
+        chatSocket.onmessage = function(e){
+            let data = JSON.parse(e.data)
+            console.log('Data:', data)
+            get_board_latest()
+            if(data.type === 'chat' && data.message != ""){
+                
+                let messages = document.getElementById('messages')
+
+                messages.insertAdjacentHTML('beforeend', `<div>
+                                        <p>${data.user}: ${data.message}</p>
+                                    </div>`)
+            }
+        }
+  let firstPos= false
+  let secondPos = false
+
+ 
+  function cords(elem){
+   
+    if (!firstPos){
+ 
+
+          firstPos = elem.id
+          elem.parentNode.style =  "width:24pt; height:24pt; border-collapse:collapse; border-color: green; border-style: solid; border-width: 0pt 1pt 1pt 0pt"
+
+          }
+        else{
+        get_board(firstPos, elem.id)
+        firstPos=false
+        }
+        //do stuff
+      }
+  
+  function draw(board){
+   
+    for (var i = 0; i < 8; i++) {
+      for (var j = 0; j< 8; j++) {
+     
+      elemento = document.getElementById(i+""+j);
+      elemento.innerHTML = pieceMap.get(board[i][j]+"")
+      
+    }
+    }
+
+    
+    
+    }
+    gameid =document.getElementById("gameidgetter").innerHTML.trim();
+    
+
+
+
+    function get_board(pos1,pos2){
+
+
+     
+            chatSocket.send(JSON.stringify({
+                'message':""
+            }))
+
+
+
+
+      
+      $.ajax({
+              type: 'GET',
+              url: "{% url 'main-play' %}",
+              data: {"pos1": pos1,
+                    "pos2":pos2,
+                    "id":gameid},
+              success: function (response) {
+                  // if not valid user, alert the user
+                  player_elem = document.getElementById("currentplayer")
+                  
+                  player_elem.textContent = "Plays-> "+response["current_player"]+" "+response["current_turn"]
+                  draw(response["board"])
+              },
+              error: function (response) {
+                  console.log(response)
+              }
+          })}
+
+
+    function get_board_latest(){
+
+      $.ajax({
+              type: 'GET',
+              url: "{% url 'main-play' %}",
+              data: {"id":gameid},
+              success: function (response) {
+                player_elem = document.getElementById("currentplayer")
+                  
+                  player_elem.textContent = "Plays-> "+response["current_player"]
+                  // if not valid user, alert the user
+                  draw(response["board"])
+              },
+              error: function (response) {
+                  console.log(response)
+              }
+          })}
+
+    /*
+          (function my_func() {
+            get_board_latest()
+            setTimeout( my_func, 5000 );
+        })();*/
+        
+  function get_board_temp(){
+    t =document.getElementById("tempsend").value
+    pos1 = t.split(" ")[0]+""
+    pos2 = t.split(" ")[1]+""
+    
+    get_board(pos1,pos2)
+  }
+
+  function send_invite(){
+    t =document.getElementById("tempsend").value
+
+
+    $.ajax({
+              type: 'GET',
+              url: "{% url 'send-invite' %}",
+              data: {"invited_user":t,
+                    "gameid":"{{gameid}}",
+                  "joingame":"1"},
+              success: function (response) {
+               
+              },
+              error: function (response) {
+                  console.log(response)
+              }
+          })
+    
+  }
+  //t =document.getElementById("buttonsend").onclick = ()=>{get_board_temp()};
+  
+
+    $(document).ready(function()
+      {
+        $( "#buttonsend" ).click(function() {
+        send_invite()
+
+        
+          });
+
+          $( "#buttonupdate" ).click(function() {
+        get_board_latest()
+          });
+      }
+
+    );
+    get_board_latest()
+ 
+</script>
+
+
+<script type="text/javascript">
+  let url = `ws://${window.location.host}/ws/socket-server/{{gameid}}`
+
+
+
+
+
+  let form = document.getElementById('form')
+  form.addEventListener('submit', (e)=> {
+      e.preventDefault()
+      let message = e.target.message.value 
+      chatSocket.send(JSON.stringify({
+          'message':message ,
+          'user': '{{ user.username }}' || "Anonymous"
+      }))
+      form.reset()
+  })
+  </script> 
+</html>
+{% endblock content %}
